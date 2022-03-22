@@ -1,8 +1,9 @@
 /**
- *   EndToEnd test for
- *   check authorisation on https://passport.yandex.ru/
- *   @author Andrei Boiko
- *   @version 22/03/2022
+ * EndToEnd test for
+ * check authorisation on https://passport.yandex.ru/
+ *
+ * @author Andrei Boiko
+ * @version 22/03/2022
  */
 
 package org.example;
