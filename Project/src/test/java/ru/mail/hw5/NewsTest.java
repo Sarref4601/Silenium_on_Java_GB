@@ -4,15 +4,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
-import java.util.List;
 
 public class NewsTest {
     WebDriver driver;
@@ -44,12 +40,17 @@ public class NewsTest {
         Assertions.assertEquals(driver.getTitle(), "В Москве в выходные выпадет до 60% месячной нормы осадков");
     }
 
+    @Test
+    void hoverAndOpenSpesialOperationNewsTest () {
+        actions.moveToElement(driver.findElement(By.xpath("//a[contains(@href, '//news.mail.ru/story/politics/ukraine_conflict/')]")))
+                .doubleClick()
+                .build()
+                .perform();
+        Assertions.assertEquals(driver.getCurrentUrl(), "https://mail.ru/");
+    }
+
     @AfterEach
     void tearDown() {
         driver.quit();
     }
-
-
-
-
 }
