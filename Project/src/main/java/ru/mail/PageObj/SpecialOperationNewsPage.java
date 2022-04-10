@@ -1,5 +1,6 @@
 package ru.mail.PageObj;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ public class SpecialOperationNewsPage extends Base {
         super(driver);
     }
 
+    @Step("Проверить, что открылась страница новостей Специальной операции")
     public void switchTabToSpecialOperationNewsPage () {
         List<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
